@@ -61,7 +61,10 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Update Windows SDK
+      - uses: GuillaumeFalourd/setup-windows10-sdk-action@v2.4
+        with: 
+          sdk-version: 26100
 
       - name: Build
         shell: cmd
@@ -111,8 +114,11 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
-
-      - uses: ilammy/msvc-dev-cmd@v1
+      
+      - name: Update Windows SDK
+      - uses: GuillaumeFalourd/setup-windows10-sdk-action@v2.4
+        with: 
+          sdk-version: 26100
 
       - name: Build
         shell: bash
