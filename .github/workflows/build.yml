@@ -270,6 +270,7 @@ jobs:
         run: |
           apt-get update
           apt-get install --assume-yes build-essential ruby-full
+          apt-get install libc6-dev
 
       - name: Prebuild
         run: |
@@ -331,6 +332,7 @@ jobs:
         run: |
           apt-get update
           apt-get install --assume-yes build-essential ruby-full
+          apt-get install libc6-dev
 
       - name: Prebuild
         run: |
