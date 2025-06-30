@@ -333,6 +333,7 @@ jobs:
         run: |
           apt-get update
           apt-get install --assume-yes build-essential ruby-full libc6-dev
+          cd /usr/include
           ln -s /usr/include/x86_64-linux-gnu/sys /usr/include/
 
       - name: Prebuild
