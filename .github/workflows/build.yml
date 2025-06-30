@@ -31,6 +31,7 @@ jobs:
           sdk: "10.0.26100.0"
 
       - name: Build
+        shell: cmd
         run: |
           COPY /Y build\janet\janetconf.h vendor\janet\src\conf\janetconf.h
           cd build
@@ -269,8 +270,7 @@ jobs:
       - name: Install Host toolchain
         run: |
           apt-get update
-          apt-get install --assume-yes build-essential ruby-full
-          apt-get install libc6-dev
+          apt-get install --assume-yes build-essential ruby-full libc6-dev
 
       - name: Prebuild
         run: |
@@ -331,8 +331,7 @@ jobs:
       - name: Install Host toolchain
         run: |
           apt-get update
-          apt-get install --assume-yes build-essential ruby-full
-          apt-get install libc6-dev
+          apt-get install --assume-yes build-essential ruby-full libc6-dev
 
       - name: Prebuild
         run: |
