@@ -59,18 +59,16 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - uses: GuillaumeFalourd/setup-windows10-sdk-action@main
+      - name: Setup Windows SDK 26100
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v2.2
         with:
           sdk-version: 26100
 
-      - name: Build new SDK
-        shell: bash
-        run: |
-          cmake -DCMAKE_SYSTEM_VERSION=10.0.26100.0
-          cmake --build .
+      - uses: ilammy/msvc-dev-cmd@v1.13.0
+        with:
+          sdk: "10.0.26100.0"
 
       - name: Build
-        shell: cmd
         run: |
           cd build
           cmake -G "Visual Studio 16 2019" -DBUILD_SDLGPU=On -DCMAKE_BUILD_TYPE=MinSizeRel -DBUILD_WITH_ALL=ON -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ..
