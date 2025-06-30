@@ -270,7 +270,8 @@ jobs:
       - name: Install Host toolchain
         run: |
           apt-get update
-          apt-get install --assume-yes build-essential ruby-full flex libelf-dev libc6-dev-amd64 binutils-dev libdwarf-dev
+          apt-get install --assume-yes build-essential ruby-full flex libelf-dev libc6-dev binutils-dev libdwarf-dev
+          ls -l /usr/include/sys/socket.h
 
       - name: Prebuild
         run: |
@@ -331,7 +332,8 @@ jobs:
       - name: Install Host toolchain
         run: |
           apt-get update
-          apt-get install --assume-yes build-essential ruby-full flex libelf-dev libc6-dev-amd64 binutils-dev libdwarf-dev
+          apt-get install --assume-yes build-essential ruby-full flex libelf-dev libc6-dev binutils-dev libdwarf-dev
+          ls -l /usr/include/sys/socket.h
 
       - name: Prebuild
         run: |
