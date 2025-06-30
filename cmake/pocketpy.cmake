@@ -7,7 +7,9 @@ message("BUILD_WITH_PYTHON: ${BUILD_WITH_PYTHON}")
 if(BUILD_WITH_PYTHON)
     option(PK_ENABLE_OS "" OFF)
     option(PK_ENABLE_THREADS "" OFF)
-    
+    add_definitions(-DPK_ENABLE_THREADS=0)
+    message("PK_ENABLE_THREADS is: ${PK_ENABLE_THREADS}")
+
     add_subdirectory(${THIRDPARTY_DIR}/pocketpy)
 
     if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
